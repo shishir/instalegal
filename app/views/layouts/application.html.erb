@@ -1,14 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Instalegal</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <meta charset="utf-8">
+  <title><%= full_title(yield(:title)) %></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%= stylesheet_link_tag    "application", media: "all"%>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <%= render 'layouts/header'%>
+  <article class="container">
+    <% flash.each do |key, value| %>
+      <%= content_tag(:div, class: "alert alert-#{key}") do %>
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <%= value %>
+      <% end %>
+    <% end %>
+    <%= yield %>
+  </article>
 </body>
 </html>

@@ -2,3 +2,42 @@
 body { padding-top: 60px; }
 @import "bootstrap-responsive";
 @import 'font-awesome';
+
+// error messages
+#error_explanation {
+  color: #f00;
+}
+
+.field_with_errors {
+  @extend .control-group;
+  @extend .error;
+}
+
+// header
+.nav {
+  &.user {
+    margin-left: 7px;
+    line-height: 3;
+
+    .avatar {
+      max-width: 20px;
+    }
+  }
+
+  span.signin {
+    margin-left: 20px;
+  }
+}
+
+
+// main page
+.hero-unit {
+  h1 small {
+   display: block;
+  }
+}
+
+// add game form
+.new_game .input-append div.add-on {
+    height: inherit !important;
+}

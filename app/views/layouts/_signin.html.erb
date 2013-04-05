@@ -1,0 +1,21 @@
+<ul class="nav pull-right">
+  <li class="dropdown signin">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+      Sign in
+      <i class="icon-lock"></i>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <%= link_to "/auth/facebook?origin=#{request.path}" do %>
+          <i class="icon-facebook-sign icon-large"></i>
+          <span class="signin">Facebook</span>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to "/auth/google_oauth2?origin=#{request.path}" do %>
+          <i class="icon-google-plus-sign icon-large"></i>
+          <span class="signin">Google</span>
+        <% end %>
+      </li>
+  </li>
+</ul>
