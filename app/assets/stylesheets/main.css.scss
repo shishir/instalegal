@@ -72,7 +72,12 @@ body.homepage{
 
 .btn-primary{
   background-image: linear-gradient(to bottom, #2169a1, #122c61);
+  background-color:rgb(17,49,96);
   background-repeat: repeat-x;
+}
+
+.btn:hover{
+  background-color:rgb(17,49,96);
 }
 
 // add game form
