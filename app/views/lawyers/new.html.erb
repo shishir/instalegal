@@ -1,0 +1,23 @@
+<%= provide(:title, 'Start using InstaLegal') %>
+<div class="lawyer-registration">
+  <%= form_for(@lawyer) do |f| %>
+    <fieldset>
+      <legend>Start using InstaLegal</legend>
+      <%= render 'shared/error_messages', model: @lawyer %>
+      <%= f.label(:name) %>
+      <%= f.text_field :name, placeholder: "Name..." %>
+
+      <%= f.label(:email) %>
+      <%= f.text_field :email, placeholder: "Email..." %>
+
+      <%= f.label(:password) %>
+      <%= f.password_field :password, placeholder: "Password..." %>
+
+      <%= f.label(:phone_number) %>
+      <%= f.text_field :phone_number, placeholder: "Phone number..." %>
+      <div>
+        <button type="submit" class="btn btn-large btn-primary">Join InstaLegal</button>
+      </div>
+    </fieldset>
+  <% end %>
+</div>

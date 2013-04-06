@@ -5,6 +5,7 @@ class SessionsController < ApplicationController
   def create
    user = User.where(email: params[:email], password: params[:password]).first
    if user
+     self.current_user = user
      flash[:success] = "Welcome #{user.name}"
      redirect_to root_path
    else

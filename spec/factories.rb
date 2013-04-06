@@ -1,7 +1,14 @@
 FactoryGirl.define do
   factory :client do
-    sequence(:email) { |n| "person-#{n}@example.org" }
-    sequence(:name) { |n| "person-#{n}" }
+    sequence(:email) { |n| "client-#{n}@example.org" }
+    sequence(:name) { |n| "client-#{n}" }
     password "password"
   end
+
+  factory :lawyer do
+    sequence(:email) { |n| "lawyer-#{n}@example.org" }
+    sequence(:name) { |n| "lawyer-#{n}" }
+    password "password"
+  end
+
 end
