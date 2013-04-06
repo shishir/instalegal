@@ -1,10 +1,10 @@
-<% if object.errors.any? %>
+<% if model.errors.any? %>
 <div id="error_explanation">
   <div class="alert alert-error">
-    The form contains <%= pluralize(object.errors.count, "error") %>.
+    The following <%= pluralize(model.errors.count, "error") %> prevented you from filling this form.
   </div>
   <ul>
-    <% object.errors.full_messages.each do |msg| %>
+    <% model.errors.full_messages.each do |msg| %>
     <li><%= msg %></li>
     <% end %>
   </ul>
