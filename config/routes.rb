@@ -3,7 +3,7 @@ Instalegal::Application.routes.draw do
   resources :clients, :only => [:new, :create]
   delete 'signout', to: 'sessions#destroy', as: :signout
   resources :sessions, :only => [:new, :create]
-  resources :lawyers, :only => [:new, :create]
+  resources :lawyers, :only => [:new, :create, :index]
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

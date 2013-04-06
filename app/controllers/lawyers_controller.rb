@@ -4,7 +4,7 @@ class LawyersController < ApplicationController
   end
 
   def create
-    @lawyer = Client.new(params[:lawyer])
+    @lawyer = Lawyer.new(params[:lawyer])
     if @lawyer.save
       flash[:success] = "Welcome #{@lawyer.name}"
       self.current_user = @lawyer
@@ -12,5 +12,9 @@ class LawyersController < ApplicationController
     else
       render 'lawyers/new'
     end
+  end
+
+  def index
+    @lawyers = Lawyer.all
   end
 end

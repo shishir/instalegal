@@ -1,0 +1,14 @@
+<li class="span3">
+  <div class="thumbnail">
+    <img data-src="holder.js/300x200" alt="">
+    <h3><%= lawyer.name %></h3>
+    <%= link_to '#video-modal', data:{toggle: 'modal'}, class: 'btn' do %>
+       <i class="icon-facetime-video "></i>
+       Video
+     <% end %>
+     <%= link_to '#', class: 'btn' do %>
+        <i class="icon-phone "></i>
+        Phone
+      <% end %>
+  </div>
+</li>

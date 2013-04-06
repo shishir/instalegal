@@ -7,7 +7,11 @@ class SessionsController < ApplicationController
    if user
      self.current_user = user
      flash[:success] = "Welcome #{user.name}"
-     redirect_to root_path
+     if user.type == "Client"
+       redirect_to lawyers_path
+    else
+      redirect_to root_path
+    end
    else
      flash[:error] = "We couldn't find a user with the supplied credentials"
      render 'sessions/new'

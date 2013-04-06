@@ -8,7 +8,7 @@ class ClientsController < ApplicationController
     if @client.save
       flash[:success] = "Welcome #{@client.name}"
       self.current_user = @client
-      redirect_to root_path
+      redirect_to lawyers_path
     else
       render 'clients/new'
     end
