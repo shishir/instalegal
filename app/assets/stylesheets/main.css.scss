@@ -45,6 +45,34 @@ body{
   h3 small {
     display: block;
   }
+  padding-right:0px;
+}
+
+.hero-unit .content-wrapper{
+  float:left;
+  width:60%;
+}
+
+.hero-unit .lawyer-profile{
+  float:left;
+  width:40%;
+  height:100%;
+}
+
+.profile-image{
+  max-height:70%;
+}
+
+.profile-box{
+  text-align:center;
+  border:1px;
+  border-color:white;
+  height:100%;
+}
+
+.btn-primary{
+  background-image: linear-gradient(to bottom, #2169a1, #122c61);
+  background-repeat: repeat-x;
 }
 
 // add game form

@@ -1,10 +1,26 @@
 <!-- Main hero unit for a primary marketing message or call to action -->
       <div class="hero-unit">
-        <h3>Get instant legal help</h3>
-        <p>We are awesome. Give us money. Now. </p>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-        <form>
-          <input type="text" name="search" value="Ask your question here..."/>
-        </form>
-        <p><a href="#" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+        <div class="content-wrapper">
+          <h3>Get instant legal help</h3>
+          <p>We are awesome. Give us money. Now. </p>
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a href="#" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+        </div>
+        
+        <div class="lawyer-profile">
+          <div class="box">
+            <div class="profile-box">
+              <img class="profile-image" src="/assets/profile.jpg">
+              <h3>Maria Sharma</h3>
+            <%= link_to '#video-modal', data:{toggle: 'modal'}, class: 'btn' do %>
+              <i class="icon-facetime-video "></i>
+              Video
+            <% end %>
+            <%= link_to '#', class: 'btn' do %>
+            <i class="icon-phone "></i>
+              Phone
+            <% end %>
+            </div>
+          </div>
+        </div>
       </div>
