@@ -2,8 +2,14 @@
   <div class="thumbnail">
     <img data-src="holder.js/300x200" alt="">
     <h3><%= lawyer.name %></h3>
-    <%= link_to '#video-modal', data:{toggle: 'modal'}, class: 'btn' do %>
-       <i class="icon-facetime-video "></i>
+    <%= link_to '#',
+        data: {
+        "opentok-session-id" => lawyer.opentok_session_id ,
+        "opentok-token-id"  => lawyer.opentok_token_id,
+        "opentok-api-key"  => "25325972"
+        },
+        class: 'btn' do %>
+       <i class="icon-facetime-video"></i>
        Video
      <% end %>
      <%= link_to '#', class: 'btn' do %>

@@ -8,7 +8,8 @@ class LawyersController < ApplicationController
     if @lawyer.save
       flash[:success] = "Welcome #{@lawyer.name}"
       self.current_user = @lawyer
-      redirect_to root_path
+      @lawyer.create_opentok_session(request.remote_addr)
+      redirect_to lawyer_path(current_user)
     else
       render 'lawyers/new'
     end

@@ -2,8 +2,13 @@ Instalegal::Application.routes.draw do
   root to: 'welcome#index'
   resources :clients, :only => [:new, :create]
   delete 'signout', to: 'sessions#destroy', as: :signout
-  resources :sessions, :only => [:new, :create]
-  resources :lawyers, :only => [:new, :create, :index]
+  resources :sessions, :only => [:new, :create] do
+    collection do
+      post 'generate_token'
+    end
+  end
+  resources :lawyers, :only => [:new, :create, :index, :show]
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

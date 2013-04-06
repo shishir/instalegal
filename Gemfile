@@ -8,7 +8,7 @@ gem 'rake'
 gem 'pg'
 gem 'bootstrap-sass'
 gem 'font-awesome-sass-rails'
-
+gem 'opentok'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

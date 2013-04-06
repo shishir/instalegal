@@ -75,6 +75,7 @@ GEM
     mime-types (1.22)
     multi_json (1.7.2)
     nokogiri (1.5.9)
+    opentok (0.0.92)
     pg (0.15.0)
     polyglot (0.3.3)
     rack (1.4.5)
@@ -152,6 +153,7 @@ DEPENDENCIES
   factory_girl_rails
   font-awesome-sass-rails
   jquery-rails
+  opentok
   pg
   rails (= 3.2.13)
   rake
