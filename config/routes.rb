@@ -1,6 +1,8 @@
 Instalegal::Application.routes.draw do
   root to: 'welcome#index'
   resources :clients, :only => [:new, :create]
+  delete 'signout', to: 'sessions#destroy', as: :signout
+  resources :sessions, :only => [:new, :create]
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
