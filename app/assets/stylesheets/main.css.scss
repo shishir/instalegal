@@ -27,6 +27,9 @@ body { padding-top: 60px; }
 body.homepage{
   background-image: url("/assets/background.jpg");
 }
+body {
+  background-image: url("http://bglabs.evade.netdna-cdn.com/45875kli90/369.jpg");
+}
 
 // main page
 .hero-unit {
@@ -125,9 +128,14 @@ body.homepage{
   padding-left: 76px;
   padding-bottom: 10px;
   background-color:black;
+  border-radius: 10px;
   .self-video-container {
-      border:5px solid white;
+      border:2px solid rgb(54,40,28);
       padding-right: 45px;
       padding-left: 2px;
+  }
+  .customer-video-container {
+      border:2px solid rgb(54,40,28);
+      padding-right: 280px;
   }
 }
