@@ -104,7 +104,7 @@ body.homepage{
 .form-horizontal .controls {
   margin-left:120px;
   input{
-    width:300px;
+    width:335px;
     height:30px;
   }
 }
@@ -113,6 +113,12 @@ body.homepage{
   width:40%;
   margin:auto;
   text-align: left;
+  border:solid;
+  border-width: 2px;
+  border-radius: 15px;
+  padding: 10px;
+  border-color: #CCC;
+  background-color: rgb(250, 250, 250);
 }
 
 // add game form
