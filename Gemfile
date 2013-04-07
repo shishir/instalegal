@@ -7,6 +7,7 @@ gem 'rake'
 
 gem 'pg'
 gem 'paperclip'
+gem 'aws-sdk'
 gem 'bootstrap-sass'
 gem 'font-awesome-sass-rails'
 gem 'opentok'
