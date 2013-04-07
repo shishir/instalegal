@@ -27,8 +27,8 @@ ActiveRecord::Schema.define(:version => 20130407101044) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
-    t.boolean  "busy",                :default => false
     t.text     "description"
+    t.boolean  "busy",                :default => false
   end
 
 end
