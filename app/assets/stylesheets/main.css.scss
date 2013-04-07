@@ -137,15 +137,39 @@ div.login fieldset{
   padding-top: 10px;
   padding-left: 76px;
   padding-bottom: 10px;
-  background-color:black;
+  background-image: url("/assets/hero-bg.png");
+  background-repeat: repeat-x repeat-y;
+  background-color:transparent;
   border-radius: 10px;
+
   .self-video-container {
-      border:2px solid rgb(54,40,28);
       padding-right: 45px;
       padding-left: 2px;
   }
   .customer-video-container {
-      border:2px solid rgb(54,40,28);
       padding-right: 280px;
+      height: 500px;
   }
+}
+
+.video-modal {
+  left: 35%;
+  height: 580px;
+  width: 1100px;
+  .modal-body {
+    max-height: 550px;
+    .video-content {
+      max-height: 550px;
+
+      .self-video-container {
+           padding-right: 45px;
+           padding-left: 2px;
+       }
+       .lawyer-video-container {
+           padding-right: 280px;
+           height: 500px;
+       }
+    }
+  }
+
 }

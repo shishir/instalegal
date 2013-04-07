@@ -2,14 +2,19 @@
   <ul class="thumbnails">
     <%= render @lawyers %>
   </ul>
-  <div id="video-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div id="video-modal" class="modal hide fade video-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
     <div class="modal-header">
       <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
       <h3 id="myModalLabel">Video</h3>
     </div>
-    <div class="modal-body">
-      <div id="video-content"></div>
-      <div id="myPublisherDiv">
+    <div class="modal-body row">
+      <div class="video-content">
+        <div id="self-video-container" class="span2 self-video-container">
+          <div id="self-video">
+          </div>
+        </div>
+        <div id="lawyer-video-container" class="span5 lawyer-video-container">
+        </div>
       </div>
     </div>
     <div class="modal-footer">
