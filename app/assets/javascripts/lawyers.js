@@ -76,7 +76,8 @@ $(function() {
      session.addEventListener('streamCreated', streamCreatedHandler);
      session.connect(apiKey, token);
      function sessionConnectedHandler(event) {
-       var publisher = TB.initPublisher(apiKey, 'myPublisherDiv');
+       var publisherProperties = {width: 150, height:200};
+       var publisher = TB.initPublisher(apiKey, 'self-video', publisherProperties);
        session.publish(publisher);
        // Subscribe to streams that were in the session when we connected
        subscribeToStreams(event.streams);
@@ -95,10 +96,11 @@ $(function() {
          }
          // Create the div to put the subscriber element in to
          var div = document.createElement('div');
+         div.setAttribute('class', "subscriber")
          div.setAttribute('id', 'stream' + streams[i].streamId);
-         $('#video-container').append(div);
+         $('#customer-video-container').append(div);
          // Subscribe to the stream
-         session.subscribe(streams[i], div.id, { width: 400, height: 300});
+         session.subscribe(streams[i], div.id, { width: 750, height: 500});
        }
      }
    };

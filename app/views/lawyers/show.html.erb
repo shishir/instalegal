@@ -1,6 +1,10 @@
-<div id="lawyer-show" data-opentok-session-id="<%= current_user.opentok_session_id%>" data-opentok-token-id="<%= current_user.opentok_token_id%>" data-opentok-api-key="25325972">
-  <div id="video-container">
-    <div id="myPublisherDiv">
+<div id="lawyer-show" class="lawyer-show"data-opentok-session-id="<%= current_user.opentok_session_id%>" data-opentok-token-id="<%= current_user.opentok_token_id%>" data-opentok-api-key="25325972">
+  <div id="video-container" class="row">
+    <div id="self-video-container" class="span2 self-video-container">
+      <div id="self-video">
+      </div>
+    </div>
+    <div id="customer-video-container" class="span5">
     </div>
   </div>
 </div>
