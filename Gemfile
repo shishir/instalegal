@@ -6,6 +6,7 @@ gem 'rake'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
+gem 'paperclip'
 gem 'bootstrap-sass'
 gem 'font-awesome-sass-rails'
 gem 'opentok'
