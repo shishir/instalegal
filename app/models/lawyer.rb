@@ -1,5 +1,7 @@
 class Lawyer < User
-  attr_accessible :name, :email, :password, :phone_number
+  attr_accessible :name, :email, :password, :phone_number, :avatar
+  has_attached_file :avatar, :styles => { :medium => "300x300#", :thumb => "100x100#" }, :default_url => "/assets/missing.png"
+
   validates :name,  presence: true
   validates :email, presence: true,
                      format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/, on: :create, message: "format is invalid" },

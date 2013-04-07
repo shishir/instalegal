@@ -1,7 +1,7 @@
 <%= provide(:title, 'Start using InstaLegal') %>
 <div class="registration box">    
   <div class="registration-form">
-    <%= form_for @lawyer, :html=>{:class=>"form-horizontal"} do |f| %>
+    <%= form_for @lawyer, :html=>{:class=>"form-horizontal", :multipart => true} do |f| %>
       <fieldset>
         <legend>Lawyer Signup</legend>
         <%= render 'shared/error_messages', model: @lawyer %>
@@ -29,6 +29,13 @@
             <%= f.text_field :phone_number, placeholder: "Phone number..." %>
           </div>
         </div>
+        <div class="control-group">
+          <%= f.label :avatar, :class=>"control-label" %>
+          <div class="controls">
+            <%= f.file_field :avatar, placeholder: "Upload your profile image..." %>
+          </div>
+        </div>
+
         <div class="controls">
           <button type="submit" class="btn btn-large btn-primary">Join InstaLegal</button>
         </div>
