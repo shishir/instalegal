@@ -1,23 +1,38 @@
 <%= provide(:title, 'Start using InstaLegal') %>
-<div class="client-registration">
-  <%= form_for(@client) do |f| %>
-    <fieldset>
-      <legend>Start using InstaLegal</legend>
-      <%= render 'shared/error_messages', model: @client %>
-      <%= f.label(:name) %>
-      <%= f.text_field :name, placeholder: "Name..." %>
-
-      <%= f.label(:email) %>
-      <%= f.text_field :email, placeholder: "Email..." %>
-
-      <%= f.label(:password) %>
-      <%= f.password_field :password, placeholder: "Password..." %>
-
-      <%= f.label(:phone_number) %>
-      <%= f.text_field :phone_number, placeholder: "Phone number..." %>
-      <div>
-        <button type="submit" class="btn btn-large btn-primary">Join InstaLegal</button>
-      </div>
-    </fieldset>
-  <% end %>
+<div class="registration box">  
+  <div class="client-registration">
+    <%= form_for @client, :html=>{:class=>"form-horizontal"} do |f| %>
+      <fieldset>
+        <legend>Start using InstaLegal</legend>
+        <%= render 'shared/error_messages', model: @client %>
+        <div class="control-group">
+          <%= f.label :name, :class=>"control-label label-left" %>
+          <div class="controls">
+            <%= f.text_field :name, placeholder: "Name..." %>
+          </div>
+        </div>
+        <div class="control-group">
+          <%= f.label :email, :class=>"control-label label-left" %>
+          <div class="controls">
+            <%= f.text_field :email, placeholder: "Email..." %>
+          </div>
+        </div>
+        <div class="control-group">
+          <%= f.label :password, :class=>"control-label label-left" %>
+          <div class="controls">
+            <%= f.password_field :password, placeholder: "Password..." %>
+          </div>
+        </div>
+        <div class="control-group">
+          <%= f.label :phone_number, :class=>"control-label label-left" %>
+          <div class="controls">
+            <%= f.text_field :phone_number, placeholder: "Phone number..." %>
+          </div>
+        </div>
+        <div class="controls">
+          <button type="submit" class="btn btn-large btn-primary">Join InstaLegal</button>
+        </div>
+      </fieldset>
+    <% end %>
+  </div>
 </div>
