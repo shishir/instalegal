@@ -3,7 +3,7 @@ $(function() {
   $('#lawyer-index a').on('click', function(e) {
     var $that = $(this);
     // Enable console logs for debugging
-    TB.setLogLevel(TB.DEBUG);
+    // TB.setLogLevel(TB.DEBUG);
 
     // Initialize session, set up event listeners, and connect
     var sessionId = $that.data('opentok-session-id');
@@ -14,12 +14,17 @@ $(function() {
       var session = TB.initSession(sessionId);
       session.addEventListener('sessionConnected', sessionConnectedHandler);
       session.addEventListener('streamCreated', streamCreatedHandler);
+      session.addEventListener("sessionDisconnected", sessionDisconnectHandler);
       session.connect(apiKey, token);
       function sessionConnectedHandler(event) {
         var publisher = TB.initPublisher(apiKey, 'myPublisherDiv');
         session.publish(publisher);
         // Subscribe to streams that were in the session when we connected
         subscribeToStreams(event.streams);
+      }
+
+      function sessionDisconnectHandler(event) {
+        session.cleanup();
       }
 
       function streamCreatedHandler(event) {
@@ -38,11 +43,19 @@ $(function() {
           div.setAttribute('id', 'stream' + streams[i].streamId);
           $('#video-content').append(div);
           // Subscribe to the stream
-          session.subscribe(streams[i], div.id);
+          session.subscribe(streams[i], div.id, { width: 400, height: 300});
         }
       }
-      $('#video-modal').modal('show');
 
+      $('#video-modal').modal({
+        keyboard: false,
+        backdrop: "static",
+      });
+
+      $('#video-modal').on('hide', function() {
+        session.disconnect();
+      });
+      $('#video-modal').modal('show');
     });
   });
 
@@ -51,7 +64,7 @@ $(function() {
     console.log("found lawyer-show");
      var $that = $("#lawyer-show");
      // Enable console logs for debugging
-     TB.setLogLevel(TB.DEBUG);
+     // TB.setLogLevel(TB.DEBUG);
 
      // Initialize session, set up event listeners, and connect
      var sessionId = $that.data('opentok-session-id');
@@ -83,9 +96,9 @@ $(function() {
          // Create the div to put the subscriber element in to
          var div = document.createElement('div');
          div.setAttribute('id', 'stream' + streams[i].streamId);
-         document.body.appendChild(div);
+         $('#video-container').append(div);
          // Subscribe to the stream
-         session.subscribe(streams[i], div.id);
+         session.subscribe(streams[i], div.id, { width: 400, height: 300});
        }
      }
    };
