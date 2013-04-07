@@ -2,6 +2,7 @@
   <div class="thumbnail">
     <%= image_tag lawyer.avatar.url(:medium) %>
     <h3><%= lawyer.name %></h3>
+    <p><%= lawyer.description %></p>
     <%= link_to '#',
         data: {
         "opentok-session-id" => lawyer.opentok_session_id ,

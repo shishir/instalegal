@@ -1,13 +1,14 @@
 class Lawyer < User
-  attr_accessible :name, :email, :password, :phone_number, :avatar
+  attr_accessible :name, :email, :password, :phone_number, :avatar, :description
   has_attached_file :avatar, :styles => { :medium => "300x300#", :thumb => "100x100#" }, :default_url => "/assets/missing.png"
 
   validates :name,  presence: true
   validates :email, presence: true,
                      format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/, on: :create, message: "format is invalid" },
                      uniqueness: { case_sensitive: false }
-   validates :password, presence: true
-   before_save { self.email.downcase! }
+  validates :password, presence: true
+  validates :description, :length => { :maximum => 200 }, presence: true
+  before_save { self.email.downcase! }
 
    def create_opentok_session(remote_addr)
      api_key = "25325972"        # Replace with your OpenTok API key.
