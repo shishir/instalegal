@@ -76,7 +76,7 @@ body.homepage{
 }
 
 .box{
-  text-align: center; 
+  text-align: center;
 }
 
 .form-horizontal .control-label{
@@ -121,9 +121,13 @@ body.homepage{
     height: inherit !important;
 }
 .lawyer-show {
-  padding-left: 41px;
-
+  padding-top: 10px;
+  padding-left: 76px;
+  padding-bottom: 10px;
+  background-color:black;
   .self-video-container {
-      padding-right: 25px;
+      border:5px solid white;
+      padding-right: 45px;
+      padding-left: 2px;
   }
 }
