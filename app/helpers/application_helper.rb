@@ -16,4 +16,13 @@ module ApplicationHelper
       link_to(text, path)
     end
   end
+
+  def redirect_path_on_home_logo(user)
+    if user.type == "Client"
+      lawyers_path
+    else
+      lawyer_path(user)
+    end
+  end
+
 end

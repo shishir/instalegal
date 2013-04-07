@@ -7,7 +7,12 @@ Instalegal::Application.routes.draw do
       post 'generate_token'
     end
   end
-  resources :lawyers, :only => [:new, :create, :index, :show]
+  resources :lawyers, :only => [:new, :create, :index, :show] do
+    member do
+      post 'busy'
+      post 'available'
+    end
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

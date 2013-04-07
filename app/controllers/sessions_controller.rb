@@ -9,10 +9,10 @@ class SessionsController < ApplicationController
      flash[:success] = "Welcome #{user.name}"
      if user.type == "Client"
        redirect_to lawyers_path
-    else
+     else
       current_user.create_opentok_session(request.remote_addr)
       redirect_to lawyer_path(current_user)
-    end
+     end
    else
      flash[:error] = "We couldn't find a user with the supplied credentials"
      render 'sessions/new'

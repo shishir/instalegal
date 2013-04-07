@@ -8,6 +8,7 @@ $(function() {
     // Initialize session, set up event listeners, and connect
     var sessionId = $that.data('opentok-session-id');
     var apiKey = $that.data('opentok-api-key');
+    var lawyer_id = $that.data('lawyer-id')
     var token;
     $.post("/sessions/generate_token", { opentok_session_id: sessionId }, function(data) {
       token = data.token_id;
@@ -16,6 +17,9 @@ $(function() {
       session.addEventListener('streamCreated', streamCreatedHandler);
       session.addEventListener("sessionDisconnected", sessionDisconnectHandler);
       session.connect(apiKey, token);
+      busy_url = "/lawyers/" + lawyer_id + "/busy"
+      available_url = "/lawyers/" + lawyer_id + "/available"
+      $.post(busy_url);
       function sessionConnectedHandler(event) {
         var publisherProperties = {width: 200, height:150};
         var publisher = TB.initPublisher(apiKey, 'self-video', publisherProperties);
@@ -55,6 +59,7 @@ $(function() {
 
       $('#video-modal').on('hide', function() {
         session.disconnect();
+        $.post(available_url);
       });
       $('#video-modal').modal('show');
     });

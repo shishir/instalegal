@@ -3,15 +3,24 @@
     <%= image_tag lawyer.avatar.url(:medium) %>
     <h3><%= lawyer.name %></h3>
     <p><%= lawyer.description %></p>
-    <%= link_to '#',
-        data: {
-        "opentok-session-id" => lawyer.opentok_session_id ,
-        "opentok-token-id"  => lawyer.opentok_token_id,
-        "opentok-api-key"  => "25325972"
-        },
-        class: 'btn' do %>
-       <i class="icon-facetime-video"></i>
-       Video
-     <% end %>
+    <% unless lawyer.busy?%>
+      <%= link_to '#',
+          data: {
+          "lawyer-id" => lawyer.id,
+          "opentok-session-id" => lawyer.opentok_session_id ,
+          "opentok-token-id"  => lawyer.opentok_token_id,
+          "opentok-api-key"  => "25325972"
+          },
+          class: 'btn' do %>
+         <i class="icon-facetime-video"></i>
+         Video
+       <% end %>
+     <% else %>
+      <%= link_to "mailto:#{lawyer.email}", class: 'btn' do %>
+         <i class="icon-envelope-alt"></i>
+         I'm busy. Drop me a note
+      <% end %>
+     <% end%>
+  <% end%>
   </div>
 </li>

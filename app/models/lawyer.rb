@@ -21,4 +21,14 @@ class Lawyer < User
      self.opentok_token_id = token
      self.save!
    end
+
+   def mark_busy
+     self.busy = true
+     self.save!
+   end
+
+   def mark_available
+     self.busy = false
+     self.save!
+   end
 end

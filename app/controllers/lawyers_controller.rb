@@ -18,4 +18,16 @@ class LawyersController < ApplicationController
   def index
     @lawyers = Lawyer.all
   end
+
+  def busy
+    @lawyer = Lawyer.find(params[:id])
+    @lawyer.mark_busy
+    head :ok
+  end
+
+  def available
+    @lawyer = Lawyer.find(params[:id])
+    @lawyer.mark_available
+    head :ok
+  end
 end
