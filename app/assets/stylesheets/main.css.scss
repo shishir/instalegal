@@ -151,3 +151,25 @@ div.login fieldset{
       height: 500px;
   }
 }
+
+.video-modal {
+  left: 35%;
+  height: 580px;
+  width: 1100px;
+  .modal-body {
+    max-height: 550px;
+    .video-content {
+      max-height: 550px;
+
+      .self-video-container {
+           padding-right: 45px;
+           padding-left: 2px;
+       }
+       .lawyer-video-container {
+           padding-right: 280px;
+           height: 500px;
+       }
+    }
+  }
+
+}
