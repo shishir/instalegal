@@ -1,5 +1,6 @@
 Instalegal::Application.routes.draw do
   root to: 'welcome#index'
+  get 'tos', to: 'welcome#tos', as: :tos
   resources :clients, :only => [:new, :create]
   delete 'signout', to: 'sessions#destroy', as: :signout
   resources :sessions, :only => [:new, :create] do
