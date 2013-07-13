@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Lawyer do
-  describe "validations" do
+  context "validations" do
      before { @lawyer = FactoryGirl.build(:lawyer) }
      subject { @lawyer }
 

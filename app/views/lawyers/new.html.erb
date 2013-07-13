@@ -1,5 +1,5 @@
 <%= provide(:title, 'Start using InstaLegal') %>
-<div class="registration box">    
+<div class="registration box">
   <div class="registration-form">
     <%= form_for @lawyer, :html=>{:class=>"form-horizontal", :multipart => true} do |f| %>
       <fieldset>
@@ -26,7 +26,7 @@
         <div class="control-group">
           <%= f.label :description, :class=>"control-label" %>
           <div class="controls">
-            <%= f.text_area :description, placeholder: "Give a brief description of your skills" %>
+            <%= f.text_area :description, placeholder: "Give a brief description of your services..." %>
           </div>
         </div>
         <div class="control-group">

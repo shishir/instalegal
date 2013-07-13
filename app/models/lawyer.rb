@@ -7,7 +7,6 @@ class Lawyer < User
                      format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/, on: :create, message: "format is invalid" },
                      uniqueness: { case_sensitive: false }
   validates :password, presence: true
-  validates :description, :length => { :maximum => 200 }, presence: true
   before_save { self.email.downcase! }
 
    def create_opentok_session(remote_addr)
