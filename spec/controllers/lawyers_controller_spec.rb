@@ -50,6 +50,32 @@ describe LawyersController do
         end
       end
     end
+
+    it "should mark lawyer available for video chat if he is not marked busy" do
+      lawyer_one = FactoryGirl.create(:lawyer)
+
+      get :index
+
+      response.should render_template('index')
+      assert_select '#lawyer-index .thumbnail' do |elements|
+        elements.each do |element|
+          assert_select element, "a", {:text => 'Video'}
+        end
+      end
+    end
+
+    it "should mark lawyer available via e-mail if he is marked busy" do
+      lawyer_one = FactoryGirl.create(:lawyer, :busy => true)
+
+      get :index
+
+      response.should render_template('index')
+      assert_select '#lawyer-index .thumbnail' do |elements|
+        elements.each do |element|
+          assert_select element, "a", {:text => 'I\'m busy. Drop me a note'}
+        end
+      end
+    end
   end
 
   context '#busy' do
