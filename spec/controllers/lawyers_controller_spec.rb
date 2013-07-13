@@ -51,4 +51,29 @@ describe LawyersController do
       end
     end
   end
+
+  context '#busy' do
+    it "should change status of a lawyer from available to busy" do
+      lawyer_one = FactoryGirl.create(:lawyer)
+      lawyer_one.should_not be_busy
+
+      post :busy, :id => lawyer_one.id
+
+      lawyer_one.reload
+      lawyer_one.should be_busy
+    end
+  end
+
+  context '#available' do
+    it "should change status of a lawyer from busy to available" do
+      lawyer_one = FactoryGirl.create(:lawyer, :busy => true)
+      lawyer_one.should be_busy
+
+      post :available, :id => lawyer_one.id
+
+      lawyer_one.reload
+      lawyer_one.should_not be_busy
+
+    end
+  end
 end
